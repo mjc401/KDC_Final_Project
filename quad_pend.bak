@@ -1,0 +1,82 @@
+#VRML V2.0 utf8
+
+DEF Quad Transform {
+  children [
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.2 0.2 1
+        }
+      }
+      geometry Extrusion {
+        spine [
+          0 0 0,
+          0 0.02 0 
+        ]
+        crossSection [
+          -0.25 0.25,
+          0 0.125,
+          0.25 0.25,
+          0.125 0,
+          -0.125 0,
+          -0.25 0.25 
+        ]
+      }
+    }
+    Shape {
+      appearance Appearance {
+        material Material {
+          diffuseColor 0.4 1 0.2
+        }
+      }
+      geometry Extrusion {
+        spine [
+          0 0 0,
+          0 0.02 0 
+        ]
+        crossSection [
+          0.125 0,
+          0.25 -0.25,
+          0 -0.125,
+          -0.25 -0.25,
+          -0.125 0,
+          0.125 0 
+        ]
+      }
+    }
+    DEF Pend Transform {
+      translation 0 -0.25 0
+      children Shape {
+        appearance Appearance {
+          material Material {
+            diffuseColor 1 0 0
+          }
+        }
+        geometry Sphere {
+          radius 0.02
+        }
+      }
+    }
+    Viewpoint {
+      position 0.75 0.5 2.2
+      orientation 1 0 0 0
+    }
+  ]
+}
+Background {
+  skyColor 0.921569 0.913725 0.929412
+  groundColor 0.2 0 0.2
+}
+Transform {
+  translation 0 -0.1 0
+  scale 1 0.01 1
+  rotation 0 1 0 0
+  children Shape {
+    appearance Appearance {
+      material Material {
+      }
+    }
+    geometry Box {
+    }
+  }
+}
